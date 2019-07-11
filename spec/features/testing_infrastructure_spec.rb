@@ -34,10 +34,4 @@ feature 'Entering players' do
     end
   end
 
-  feature 'Attack' do
-    scenario 'it reduces the HP of the opponent player' do
-      karate_chop
-      expect(page).to have_content 'Charlie HP -10'
-    end
-  end
 end

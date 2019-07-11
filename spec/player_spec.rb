@@ -13,10 +13,10 @@ describe Player do
       expect(leo.hp).to eq 100
     end
 
-    describe '#attack' do
+    describe '#receive_damage' do
       it 'will minus by 10 points from hp' do
-        charlie.attack(leo)
-        expect(charlie.hp).to eq 90
+        leo.receive_damage
+        expect(leo.hp).to eq 90
       end
     end
 end
