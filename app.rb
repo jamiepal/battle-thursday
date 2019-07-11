@@ -1,6 +1,6 @@
 require 'capybara'
 require 'sinatra'
-require 'player'
+require '/Users/student/Desktop/Projects/week 3 challenge/battle_with_charlie/battle-thursday/lib/player.rb'
 
 class Battle < Sinatra::Base
 
