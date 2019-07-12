@@ -1,8 +1,8 @@
 <html>
   <body style="background-color:rgb(221, 8, 92)">
-    <h1>You Karate Chopskied <%=@player_2%></h1>
+    <h1>You Karate Chopskied <%= $game.current_player.name%></h1>
     <br>
-    <h2><%=@player_2%> hp: <%=@player_2_hp%> </h2>
+    <h2><%=$game.current_player.name%> hp: <%=$game.current_player.hp%> </h2>
     <br>
     <form action="/attack" method="get">
       <div class="button">
