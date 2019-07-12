@@ -1,7 +1,7 @@
 require 'capybara'
 require 'sinatra'
-require '/Users/student/Projects/admin/battle-project/lib/player.rb'
-require '/Users/student/Projects/admin/battle-project/lib/game.rb'
+require './lib/player.rb'
+require './lib/game.rb'
 
 class Battle < Sinatra::Base
 
@@ -17,7 +17,6 @@ class Battle < Sinatra::Base
 
     post '/names' do
       $game = Game.new(params[:player_1], params[:player_2])
-
       redirect '/play'
     end
 
@@ -28,8 +27,11 @@ class Battle < Sinatra::Base
     end
 
     get '/attack' do
+      $game.attack($game.player_2)
       @player_1 = $game.player_1.name
+      @player_1_hp = $game.player_1.hp
       @player_2 = $game.player_2.name
+      @player_2_hp = $game.player_2.hp
       erb(:attack)
     end
 

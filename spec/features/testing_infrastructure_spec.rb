@@ -22,7 +22,7 @@ feature 'Entering players' do
   feature 'See Player 2 hit points' do
     scenario 'it allows Player 1 to see Player 2`s hit points' do
       sign_in_and_play
-      expect(page).to have_content 'Charlie HP'
+      expect(page).to have_content 'Charlie HP 100'
     end
   end
 
@@ -31,6 +31,15 @@ feature 'Entering players' do
       sign_in_and_play
       click_button 'Karate Chopskies'
       expect(page).to have_content "You Karate Chopskied Charlie"
+    end
+  end
+
+  feature 'switching turns' do
+    scenario 'give the possibility to switch turns between players' do
+      sign_in_and_play
+      click_button 'Karate Chopskies'
+      click_button 'Karate Chopskies'
+      expect(page).to have_content "You Karate Chopskied Richie"
     end
   end
 
