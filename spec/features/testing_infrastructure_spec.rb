@@ -18,6 +18,7 @@ feature 'Entering players' do
     sign_in_and_play
     expect(page).to have_content 'Richie vs. Charlie'
   end
+end
 
   feature 'See Player 2 hit points' do
     scenario 'it allows Player 1 to see Player 2`s hit points' do
@@ -50,4 +51,11 @@ feature 'Entering players' do
       expect(page).to have_content "Player 1: Richie: HP: 100"
     end
   end
-end
+
+feature "ending the game" do
+  scenario "player 2 loses" do
+    sign_in_and_play
+    19.times {click_button "Karate Chopskies"}
+    expect(page).to have_content "Charlie, YOU LOSE!!"
+    end
+  end

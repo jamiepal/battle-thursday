@@ -24,4 +24,8 @@ attr_reader :player_1, :player_2, :current_player , :opposing_player
       @opposing_player = @player_2
     end
   end
+  def game_over?
+    @player_1.hp <= 0 || @player_2.hp <= 0
+  end
+
 end
