@@ -29,8 +29,6 @@ class Battle < Sinatra::Base
     get '/attack' do
       $game.attack($game.opposing_player)
       $game.switch_turns
-      #@current_player= $game.current_player
-      #@opposing_player= $game.opposing_player
       erb(:attack)
     end
 

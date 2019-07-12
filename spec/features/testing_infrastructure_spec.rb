@@ -43,4 +43,11 @@ feature 'Entering players' do
     end
   end
 
+  feature "Showing HP's of both players" do
+    scenario 'check above' do
+      sign_in_and_play
+      click_button 'Karate Chopskies'
+      expect(page).to have_content "Player 1: Richie: HP: 100"
+    end
+  end
 end
